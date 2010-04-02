@@ -1,0 +1,4 @@
+include README.txt
+include docs/*
+recursive-include Products *.py
+global-exclude *pyc

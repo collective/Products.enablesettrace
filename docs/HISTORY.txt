@@ -1,0 +1,8 @@
+Changelog
+=========
+
+0.1 (unreleased)
+----------------
+
+- Initial release: eggified version of Products.enablesettrace as stored in the
+  Zope Subversion Repository.

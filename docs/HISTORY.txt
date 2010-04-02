@@ -4,7 +4,7 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Also allow import of ipdb. [markvl]
 
 
 0.1 (2010-04-02)

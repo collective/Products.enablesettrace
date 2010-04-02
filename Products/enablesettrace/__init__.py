@@ -1,2 +1,3 @@
 import AccessControl
-AccessControl.ModuleSecurityInfo('pdb').declarePublic('set_trace')
+AccessControl.allow_module('pdb')
+AccessControl.allow_module('ipdb')

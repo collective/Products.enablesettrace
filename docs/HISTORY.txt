@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2010-04-02)
 ----------------
 
 - Also allow import of ipdb. [markvl]

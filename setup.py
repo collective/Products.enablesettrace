@@ -5,7 +5,7 @@ version = '0.3dev'
 
 setup(name='Products.enablesettrace',
       version=version,
-      description="Allow import of pdb and ipdb in restricted code.",
+      description="Allow import of pdb in restricted code.",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers

@@ -5,7 +5,9 @@ To make a long story short: sometimes you need to break into the debugger in the
 middle of a Script (Python). To prevent the frustrating ``Unauthorized: import
 of 'pdb' is unauthorized`` message, use this enablesettrace package.
 
-This package supports importing the ``pdb`` *and* ``ipdb`` module.
+This package supports importing the ``pdb`` module. It is a fork of the original
+Products.enablesettrace package which still resides in the Zope Subversion
+Repository. The only change made was turning the package into an egg.
 
 
 Installation

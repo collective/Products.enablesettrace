@@ -4,7 +4,9 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Revert changes made in version 0.2 so the egg contains the same code as the
+  original in the Zope Subversion Repository. Moved the 'enhanced' code to
+  Products.Ienablesettrace. [markvl]
 
 
 0.2 (2010-04-02)

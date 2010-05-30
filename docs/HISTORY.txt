@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3 (unreleased)
+1.0 (2010-05-30)
 ----------------
 
 - Revert changes made in version 0.2 so the egg contains the same code as the

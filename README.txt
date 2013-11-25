@@ -9,6 +9,9 @@ This package supports importing the ``pdb`` module. It is a fork of the original
 Products.enablesettrace package which still resides in the Zope Subversion
 Repository. The only change made was turning the package into an egg.
 
+It also incorporates the monkeypatch from the ``zdb`` product from Chris
+Withers. 
+
 
 Installation
 ============
@@ -31,3 +34,5 @@ This code was originally contributed by Zach Bir and `committed by Jim Fulton
 <http://svn.zope.org/Products.enablesettrace/trunk/__init__.py?rev=41469&r1=41469&view=log>`_.
 Mark van Lent eggified the product.
 
+Jean Jordaan snarfed Chris's code from https://github.com/Simplistix/zdb
+There is more in ``zdb`` that may be worth porting.

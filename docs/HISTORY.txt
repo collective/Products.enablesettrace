@@ -4,7 +4,7 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Incorporate zdb monkeypatch to load the line cache
 
 
 1.0 (2010-05-30)

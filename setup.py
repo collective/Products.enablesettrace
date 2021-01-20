@@ -22,7 +22,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: Zope Public License",
     ],
-    keywords="",
+    keywords="Python Zope Plone skin script debugging",
     author="Mark van Lent",
     author_email="m.van.lent@zestsoftware.nl",
     url="http://github.com/collective/Products.enablesettrace",

@@ -1,4 +1,4 @@
-include README.txt
+include *rst
 include docs/*
 recursive-include Products *.py
 global-exclude *pyc

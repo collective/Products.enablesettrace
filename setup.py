@@ -1,15 +1,18 @@
 from setuptools import setup, find_packages
-import os
 
 version = "1.2.dev0"
+
+with open("README.rst") as myfile:
+    readme = myfile.read()
+with open("CHANGES.rst") as myfile:
+    changes = myfile.read()
+long_description = readme + "\n" + changes
 
 setup(
     name="Products.enablesettrace",
     version=version,
     description="Allow import of pdb in restricted code.",
-    long_description=open("README.txt").read()
-    + "\n"
-    + open(os.path.join("docs", "HISTORY.txt")).read(),
+    long_description=long_description,
     # Get more strings from https://pypi.org/classifiers/
     classifiers=[
         "Development Status :: 7 - Inactive",

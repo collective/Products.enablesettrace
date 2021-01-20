@@ -76,11 +76,10 @@ except ImportError:
     # a dummy class, so isinstance lower down should never return true
     class FSPythonScript:
         pass
-
-
 else:
     original_write = FSPythonScript._write
     # this is where we fill the line cache for FS Python Scripts
+
     def monkey_write(self, text, compile):
         original_write(self, text, compile)
         self._fillLineCache()

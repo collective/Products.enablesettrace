@@ -10,7 +10,7 @@ Products.enablesettrace package which still resides in the Zope Subversion
 Repository. The only change made was turning the package into an egg.
 
 It also incorporates the monkeypatch from the ``zdb`` product from Chris
-Withers. 
+Withers.
 
 
 Installation

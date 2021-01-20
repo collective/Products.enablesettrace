@@ -25,7 +25,7 @@ def monkey_checkcache(filename=None):
             filenames = [filename]
         else:
             return
-        
+
     for filename in filenames:
         size, mtime, lines, fullname = linecache.cache[filename]
         if mtime==0:
@@ -54,7 +54,7 @@ def monkey_fillLineCache(self):
 
 PythonScript._fillLineCache = monkey_fillLineCache
 
-    
+
 original_exec = PythonScript._exec
 
 def monkey_exec(self, bound_names, args, kw):

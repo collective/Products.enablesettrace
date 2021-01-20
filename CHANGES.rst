@@ -6,6 +6,8 @@ Changelog
 
 - Note: this project is inactive.
 
+- Code cleanup: black, pyflakes, flake8, pyroma.
+
 - Moved to Plone collective: https://github.com/collective/Products.enablesettrace
 
 

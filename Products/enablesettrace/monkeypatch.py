@@ -14,6 +14,7 @@ import RestrictedPython
 
 ps_fncache = {}
 
+
 def monkey_checkcache(filename=None):
     """Discard cache entries that are out of date...
     ...and aren't PythonScripts!"""
@@ -28,7 +29,7 @@ def monkey_checkcache(filename=None):
 
     for filename in filenames:
         size, mtime, lines, fullname = linecache.cache[filename]
-        if mtime==0:
+        if mtime == 0:
             continue
         try:
             stat = os.stat(fullname)
@@ -38,7 +39,9 @@ def monkey_checkcache(filename=None):
         if size != stat.st_size or mtime != stat.st_mtime:
             del linecache.cache[filename]
 
+
 linecache.checkcache = monkey_checkcache
+
 
 def monkey_fillLineCache(self):
     size = len(self._body)
@@ -46,20 +49,23 @@ def monkey_fillLineCache(self):
     if not size:
         return
     mtime = 0
-    filename = '/'.join(self.getPhysicalPath())
-    lines = [l+'\n' for l in self._body.split('\n')]
-    fullname = 'Script (Python) at '+filename
+    filename = "/".join(self.getPhysicalPath())
+    lines = [l + "\n" for l in self._body.split("\n")]
+    fullname = "Script (Python) at " + filename
     linecache.cache[filename] = size, mtime, lines, fullname
-    ps_fncache[filename]=True
+    ps_fncache[filename] = True
+
 
 PythonScript._fillLineCache = monkey_fillLineCache
 
 
 original_exec = PythonScript._exec
 
+
 def monkey_exec(self, bound_names, args, kw):
     self._fillLineCache()
     return original_exec(self, bound_names, args, kw)
+
 
 PythonScript._exec = monkey_exec
 
@@ -70,15 +76,18 @@ except ImportError:
     # a dummy class, so isinstance lower down should never return true
     class FSPythonScript:
         pass
+
+
 else:
     original_write = FSPythonScript._write
-     # this is where we fill the line cache for FS Python Scripts
-    def monkey_write(self,text,compile):
-        original_write(self,text,compile)
+    # this is where we fill the line cache for FS Python Scripts
+    def monkey_write(self, text, compile):
+        original_write(self, text, compile)
         self._fillLineCache()
 
     FSPythonScript._write = monkey_write
     FSPythonScript._fillLineCache = monkey_fillLineCache
+
 
 def monkey_compiler(self, *args, **kw):
     if self._body:
@@ -95,20 +104,21 @@ def monkey_compiler(self, *args, **kw):
             except ZeroDivisionError:
                 f = sys.exc_info()[2].tb_frame
                 while f:
-                    obj = f.f_locals.get('self')
-                    if isinstance(obj,FSPythonScript):
+                    obj = f.f_locals.get("self")
+                    if isinstance(obj, FSPythonScript):
                         break
                     f = f.f_back
                 if f is None:
-                    filename = 'Python Script without Acquisition Context'
+                    filename = "Python Script without Acquisition Context"
                 else:
-                    filename = '/'.join(obj.getPhysicalPath())
+                    filename = "/".join(obj.getPhysicalPath())
         else:
-            filename = '/'.join(self.getPhysicalPath())
+            filename = "/".join(self.getPhysicalPath())
 
         args = list(args)
-        args[3]=filename
+        args[3] = filename
 
     return RestrictedPython.compile_restricted_function(*args, **kw)
+
 
 PythonScript._compiler = monkey_compiler

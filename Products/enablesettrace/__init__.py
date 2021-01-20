@@ -1,4 +1,5 @@
 import monkeypatch
 
 import AccessControl
-AccessControl.ModuleSecurityInfo('pdb').declarePublic('set_trace')
+
+AccessControl.ModuleSecurityInfo("pdb").declarePublic("set_trace")

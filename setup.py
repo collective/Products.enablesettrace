@@ -33,9 +33,5 @@ setup(
     zip_safe=False,
     install_requires=[
         "setuptools",
-        # -*- Extra requirements: -*-
     ],
-    entry_points="""
-      # -*- Entry points: -*-
-      """,
 )

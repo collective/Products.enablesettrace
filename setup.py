@@ -12,6 +12,7 @@ setup(
     + open(os.path.join("docs", "HISTORY.txt")).read(),
     # Get more strings from https://pypi.org/classifiers/
     classifiers=[
+        "Development Status :: 7 - Inactive",
         "Intended Audience :: Developers",
         "Framework :: Plone",
         "Framework :: Zope2",

@@ -4,6 +4,8 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Note: this project is inactive.
+
 - Moved to Plone collective: https://github.com/collective/Products.enablesettrace
 
 
